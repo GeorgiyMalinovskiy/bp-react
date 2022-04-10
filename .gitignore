@@ -1,0 +1,12 @@
+node_modules
+dist
+coverage
+
+logs
+*.log
+*.log.*
+
+**/*.env*
+!**/*.env.sample
+
+src/__mocks__/db.json

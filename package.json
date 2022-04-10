@@ -1,0 +1,87 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "nodemonConfig": {
+    "ext": "js",
+    "ignore": [
+      "db.json"
+    ],
+    "delay": "2"
+  },
+  "scripts": {
+    "build": "webpack build -- --node-env=production",
+    "serve:stub": "nodemon ./src/__mocks__/index.js -- --node-env=development",
+    "serve:ui": "webpack serve -- --node-env=development",
+    "serve": "concurrently \"npm run serve:stub\" \"npm run serve:ui\"",
+    "lint": ".\\node_modules\\.bin\\eslint .",
+    "test": "jest --config ./jest/jest.config.js"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "keywords": [],
+  "author": "Georgii Malinovskii",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/plugin-transform-typescript": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.24",
+    "@types/react": "^18.0.1",
+    "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "babel-jest": "^27.5.1",
+    "babel-loader": "^8.2.4",
+    "concurrently": "^7.1.0",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "html-webpack-plugin": "^5.5.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "source-map-loader": "^3.0.1",
+    "ts-loader": "^9.2.8",
+    "typescript": "^4.6.3",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/user-event": "^14.1.1",
+    "dotenv": "^16.0.0",
+    "history": "^5.3.0",
+    "lodash": "^4.17.21",
+    "react": "^18.0.0",
+    "react-app-polyfill": "^3.0.0",
+    "react-dom": "^18.0.0",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0"
+  }
+}
