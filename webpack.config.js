@@ -1,47 +1,47 @@
-const path = require("path");
+const path = require('path')
 
-const HtmlWeboackPlugin = require("html-webpack-plugin");
+const HtmlWeboackPlugin = require('html-webpack-plugin')
 
-const mode = process.env.NODE_ENV || "development";
+const mode = process.env.NODE_ENV || 'development'
 
-console.log("Mode: ", process.env.NODE_ENV); // eslint-disable-line no-console
+console.log('Mode: ', process.env.NODE_ENV) // eslint-disable-line no-console
 module.exports = {
     mode,
-    entry: "./src/index.ts",
-    devtool: "source-map",
+    entry: './src/index.ts',
+    devtool: 'source-map',
     module: {
         rules: [
             {
                 test: /\.tsx?$/,
-                loader: "babel-loader",
+                loader: 'babel-loader',
                 options: {
-                    presets: ["@babel/preset-env"],
-                    plugins: ["@babel/plugin-transform-runtime"],
+                    presets: ['@babel/preset-env'],
+                    plugins: ['@babel/plugin-transform-runtime'],
                 },
                 exclude: /node_modules/,
             },
-            { test: /\.js$/, loader: "source-map-loader" },
+            { test: /\.js$/, loader: 'source-map-loader' },
         ],
     },
     resolve: {
-        extensions: [".tsx", ".ts", ".js"],
+        extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
-        filename: "bundle.js",
-        path: path.resolve(__dirname, "dist"),
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
         new HtmlWeboackPlugin({
-            publicPath: "/",
-            template: path.resolve(__dirname, "src", "static", "index.html"),
+            publicPath: '/',
+            template: path.resolve(__dirname, 'src', 'static', 'index.html'),
         }),
     ],
     devServer: {
         static: {
-            directory: path.join(__dirname, "dist"),
+            directory: path.join(__dirname, 'dist'),
         },
         historyApiFallback: true,
         hot: true,
         port: 3000,
     },
-};
+}
