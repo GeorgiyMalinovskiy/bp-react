@@ -3,5 +3,8 @@
     "printWidth": 120,
     "tabWidth": 4,
     "useTabs": false,
-    "endOfLine": "auto"
+    "endOfLine": "auto",
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true
 }

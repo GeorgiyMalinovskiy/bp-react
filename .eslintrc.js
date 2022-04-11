@@ -4,21 +4,21 @@ module.exports = {
         es2021: true,
         node: true,
     },
-    extends: ["plugin:react/recommended", "airbnb", "prettier", "plugin:jsx-a11y/recommended"],
-    plugins: ["react", "react-hooks", "import", "jest", "jsx-a11y", "@typescript-eslint", "prettier"],
-    parser: "@typescript-eslint/parser",
+    extends: ['plugin:react/recommended', 'airbnb', 'prettier', 'plugin:jsx-a11y/recommended'],
+    plugins: ['react', 'react-hooks', 'import', 'jest', 'jsx-a11y', '@typescript-eslint', 'prettier'],
+    parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
         },
-        ecmaVersion: "latest",
-        sourceType: "module",
+        ecmaVersion: 'latest',
+        sourceType: 'module',
     },
     settings: {
-        "import/resolver": {
+        'import/resolver': {
             node: {
-                paths: ["src", "scripts"],
-                extensions: [".js", ".jsx", ".ts", ".tsx"],
+                paths: ['src', 'scripts'],
+                extensions: ['.js', '.jsx', '.ts', '.tsx'],
             },
             typescript: {
                 alwaysTryTypes: true,
@@ -26,43 +26,49 @@ module.exports = {
         },
     },
     rules: {
-        "react/jsx-uses-react": "off",
-        "react/react-in-jsx-scope": "off",
-        "react/jsx-filename-extension": [
+        'react/jsx-uses-react': 'off',
+        'react/react-in-jsx-scope': 'off',
+        'react/jsx-filename-extension': [
             1,
             {
-                extensions: [".jsx", ".tsx"],
+                extensions: ['.jsx', '.tsx'],
             },
         ],
-        "import/order": [
-            "error",
+        'import/order': [
+            'error',
             {
-                groups: ["builtin", "external", "internal"],
+                groups: ['builtin', 'external', 'internal'],
                 pathGroups: [
                     {
-                        pattern: "react",
-                        group: "external",
-                        position: "before",
+                        pattern: 'react',
+                        group: 'external',
+                        position: 'before',
                     },
                 ],
-                pathGroupsExcludedImportTypes: ["react"],
-                "newlines-between": "always",
+                pathGroupsExcludedImportTypes: ['react'],
+                'newlines-between': 'always',
                 alphabetize: {
-                    order: "asc",
+                    order: 'asc',
                     caseInsensitive: true,
                 },
             },
         ],
-        "import/extensions": [
-            "error",
-            "ignorePackages",
+        'import/extensions': [
+            'error',
+            'ignorePackages',
             {
-                js: "never",
-                jsx: "never",
-                ts: "never",
-                tsx: "never",
+                js: 'never',
+                jsx: 'never',
+                ts: 'never',
+                tsx: 'never',
             },
         ],
-        "prettier/prettier": 2,
+        'prettier/prettier': [
+            'warn',
+            {
+                singleQuote: true,
+                semi: false,
+            },
+        ],
     },
-};
+}
