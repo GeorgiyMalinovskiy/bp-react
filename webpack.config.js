@@ -1,13 +1,13 @@
-const path = require('path')
+const path = require('path');
 
-const HtmlWeboackPlugin = require('html-webpack-plugin')
+const HtmlWeboackPlugin = require('html-webpack-plugin');
 
-const mode = process.env.NODE_ENV || 'development'
+const mode = process.env.NODE_ENV || 'development';
 
-console.log('Mode: ', process.env.NODE_ENV) // eslint-disable-line no-console
+console.log('Mode: ', process.env.NODE_ENV); // eslint-disable-line no-console
 module.exports = {
     mode,
-    entry: './src/index.ts',
+    entry: './src/index.tsx',
     devtool: 'source-map',
     module: {
         rules: [
@@ -44,4 +44,4 @@ module.exports = {
         hot: true,
         port: 3000,
     },
-}
+};
